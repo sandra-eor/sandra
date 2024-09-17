@@ -11,21 +11,6 @@ def circle():
     c.fillcolor("yellow")
     c.end_fill()
 
-
-def petalo_1():
-    p = Turtle()
-    p.speed(0)
-    p.begin_fill()
-    p.setheading(200)
-    p.color("green")
-    p.goto(35,-140)
-    p.circle(60,180)
-    p.left(45)
-
-
-    p.end_fill()
-    #petalo1.hiderturtle 
-
 def hoja():
     h = Turtle()
     h.speed(0)
@@ -44,14 +29,10 @@ def hoja():
 
     h.end_fill()
 
-    
-
-
-
-
 
 def petalo_2():
     p2 = Turtle()
+    p2.speed(0)
     p2.begin_fill()
     p2.setheading(0)
     p2.color("green")
@@ -111,6 +92,7 @@ def another_flower():
         af.forward(30)
 
         af.end_fill()
+
 def signature ():
      s = Turtle()
      s.penup()
