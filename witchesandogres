@@ -1,0 +1,82 @@
+def story():
+    print("In the x centary there was a large colony in which witches and ogres lived together."
+          "They were ruled by an ogre king and a witch queen."
+          "At the end of this centuary,these kings had a dispute,"
+          "in which it was decided that the large colony would be divided into two,in which each one would rule their species")
+    witchesorogres()
+    
+
+
+def witchesorogres():
+    print("Do you decided to go the witches' or ogres' colony?")
+    woo = input()
+    if woo.lower() == "witches":
+        witches()
+    elif woo.lower() == "ogres":
+        ogres()
+
+
+
+
+
+def witches():
+    print("You chose to go to the witch colony")
+    print("In the witches' colony,casting spells and you will hear very lood laughter")
+    print("Choose a weapon")
+    print("Wand or sword")
+    wandorsword()
+
+
+def wandorsword():
+    print("Choose a weapon wand or sword:")
+   
+    wos = input()
+    if wos.lower() == "wand":
+     print("You choose wand")
+     wand()
+    elif wos.lower()=="sword":
+        print("You choose sword")
+        sword()
+    else:
+        print("Invalid answer")
+
+
+
+def wand():
+    print("You have to find a wizard so you can use it.")
+    print("But the witches have alredy killed the wizard,they have taken his position ")
+    print("GAME OVER")
+
+def sword():
+    print("You meet a witch on the way and it kills you")
+    print("GAME OVER")
+
+
+def ogres():
+    print("You choose ogres")
+    invisibilityortransformation()
+
+
+def invisibilityortransformation():
+    print("You choose power invisibility or transformation")
+    iot=input()
+    if iot.lower() == "invisibility":
+        print("GAME OVER")
+    elif iot.lower()== "transformation":
+        print("You can transform into an ogre")
+        print("Find an ogre , who opposes the  current king who rulers.")
+        print("Face the ogre king ")
+
+    else:
+        print("Invalid answer")
+
+def spitoraxe():
+    print("Choose a weapon")
+    soa = input
+    if soa.lower() =="spit":
+        print("GAME OVER")
+    elif soa.lower() =="axe":
+        print("YOU WINNER!!")
+
+if __name__=="__main__":
+    story()

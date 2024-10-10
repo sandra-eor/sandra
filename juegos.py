@@ -1,10 +1,13 @@
+import random
 def player_1():
-    val = input ("Choice: rock, paper or scissors.")
-
-    if val == "rock":
+    p1 = input("Player1 enter your choice(rock,paper or scissors):").lower ()
+    p2 = input("Player2 enter your choice(rock,paper or scissors):").lower ()
+    if p1 == "rock":
         print("You winner!!:)")
+    elif p2 == "paper":
+        print("")
     else:
-        print("You winner!!:)")
+        print("Invalid answer!!")
 
 def player_2():
     val = input()
@@ -23,8 +26,10 @@ def player1():
 
 
 
+
+
 if __name__== "__main__":
-    player1()
+    player_1()
     player_2()
  
  
