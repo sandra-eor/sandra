@@ -1,12 +1,106 @@
 
-from turtle import Turtle, Screen 
 
+from turtle import * 
+from random import randint, choice
+
+############# DEFINE CLASSES AND FUNCTIONS #############
+def road():
+    r = Turtle()
+    r.hideturtle()
+    r.speed(0)
+    r.goto(-160,500)
+    r.fillcolor("black")
+    r.begin_fill()
+    r.goto(160,500)
+    r.goto(160,-500)
+    r.goto(-160,-500)
+    r.end_fill()
 
 class Car(Turtle):
-    def __init__(self):
-        super() .__init__()
-        self.shape("car.gif")
+    '''
+    Constructor
+    '''
+    def __init__(self,shape,x,y):
+        super().__init__()
+        self.shape(shape)
+        self.penup()
+        self.goto( x ,y )
+        self.setheading(270)
+    '''
+    drive() Method
+    '''
+    def drive(self):
+         self.forward(10)
+    '''
+    relocate() Method
+    '''
+    def relocate(self):
+        if self.ycor()<-500:
+            self.goto(randint(-150,150),500)
 
-s=Screen()
-s.register_shape("car.gif")
+    def collide(self,player):
+        distSq = (self.xcor() - player.xcor())** 2 + (self.ycor() - player.ycor())**2
+        dist = distSq ** 0.5
 
+        if dist < 30:
+            print("collide")
+            return True
+        return False
+    
+    
+class Player (Turtle):
+
+    def __init__(self,shape,x,y):
+        super().__init__()
+        self.shape(shape)
+        self.penup()
+        self.goto( x ,y )
+
+        self.screen.onkeypress(self.go_right,'d')
+        self.screen.onkeypress(self.go_left,'a')
+        self.screen.listen()
+
+    def go_right(self):
+        print("right")
+        self.goto(self.xcor()+15 ,self.ycor())
+
+    def go_left(self):
+        print("left")
+
+
+        self.goto(self.xcor()-15,self.ycor())
+
+############# YOUR PROGRAM  #############
+screen = Screen()
+screen.tracer(0)
+screen.bgcolor("pink")
+road()
+screen.register_shape("boo.png")
+screen.register_shape("randall.png")
+screen.register_shape("solivan.gif.png")
+screen.register_shape("wazoski.png")
+screen.register_shape("random.gif")
+screen.tracer(1)
+
+images = ["boo.png", "randall.png", "solivan.gif.png", "wazoski.png", "random.gif"]
+
+#c = Car("one.gif",100,100)
+#d = Car("two.gif",100,100)
+cars =[]
+for i in range (5):
+    temp = Car (images[i], randint(-150,150),randint(300,300))
+    cars.append(temp)
+
+player = Player("boo.png",0,-100)
+
+running = True
+while running:
+    for car in cars:
+        car.drive()
+        car.relocate()
+        if car.collide(player):
+            running = False
+            break
+
+
+screen.mainloop()
