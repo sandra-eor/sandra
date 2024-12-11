@@ -8,12 +8,12 @@ def road():
     r = Turtle()
     r.hideturtle()
     r.speed(0)
-    r.goto(-160,500)
+    r.goto(-260,500)
     r.fillcolor("black")
     r.begin_fill()
-    r.goto(160,500)
-    r.goto(160,-500)
-    r.goto(-160,-500)
+    r.goto(260,500)
+    r.goto(260,-500)
+    r.goto(-260,-500)
     r.end_fill()
 
 class Car(Turtle):
@@ -75,14 +75,14 @@ screen = Screen()
 screen.tracer(0)
 screen.bgcolor("pink")
 road()
-screen.register_shape("boo.png")
-screen.register_shape("randall.png")
-screen.register_shape("solivan.gif.png")
-screen.register_shape("wazoski.png")
-screen.register_shape("random.gif")
+screen.register_shape("boo.gif")
+screen.register_shape("randall.gif")
+screen.register_shape("solivan.gif")
+screen.register_shape("wazoski.gif")
+screen.register_shape("monster1.gif")
 screen.tracer(1)
 
-images = ["boo.png", "randall.png", "solivan.gif.png", "wazoski.png", "random.gif"]
+images = ["boo.gif", "randall.gif", "solivan.gif", "wazoski.gif", "monster1.gif"]
 
 #c = Car("one.gif",100,100)
 #d = Car("two.gif",100,100)
@@ -91,7 +91,7 @@ for i in range (5):
     temp = Car (images[i], randint(-150,150),randint(300,300))
     cars.append(temp)
 
-player = Player("boo.png",0,-100)
+player = Player("boo.gif",0,-200)
 
 running = True
 while running:
