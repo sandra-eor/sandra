@@ -36,16 +36,16 @@ class Car(Turtle):
     '''
     def relocate(self):
         if self.ycor()<-500:
-            self.goto(randint(-150,150),500)
+            self.goto(randint(-200,200),500)
 
     def collide(self,player):
         distSq = (self.xcor() - player.xcor())** 2 + (self.ycor() - player.ycor())**2
         dist = distSq ** 0.5
 
-        if dist < 30:
-            print("collide")
-            return True
-        return False
+        return dist < 30
+         #   print("collide")
+           # return True
+       # return False
     
     
 class Player (Turtle):
@@ -66,8 +66,6 @@ class Player (Turtle):
 
     def go_left(self):
         print("left")
-
-
         self.goto(self.xcor()-15,self.ycor())
 
 ############# YOUR PROGRAM  #############
@@ -83,15 +81,33 @@ screen.register_shape("monster1.gif")
 screen.tracer(1)
 
 images = ["boo.gif", "randall.gif", "solivan.gif", "wazoski.gif", "monster1.gif"]
-lanes = [-250 ,-100 ,100,250] 
-#c = Car("one.gif",100,100)
-#d = Car("two.gif",100,100)
+
+
+
+#c = Car("randall.gif",100,100)
+#d = Car("solivan.gif",100,100)
 cars =[]
-for i in range (5):
-    temp = Car (images[i], randint(-150,150),randint(300,300))
+for i in range (1):
+    temp = Car ("randall.gif", randint(-200,-200),randint(300,300),)
+    cars.append(temp)
+    
+solivan=[]
+for i in range (1):
+    temp = Car ("solivan.gif", randint(0,0),randint(300,300),)
+    cars.append(temp)
+monster1=[]
+for i in range (1):
+    temp = Car ("monster1.gif", randint(200,200),randint(300,300),)
     cars.append(temp)
 
-player = Player("boo.gif",0,-200)
+wazoski=[]
+for i in range (1):
+    temp = Car ("wazoski.gif", randint(-100,-100),randint(300,300),)
+    cars.append(temp)
+
+
+player = Player("boo.gif",0,-250)
+
 
 running = True
 while running:
