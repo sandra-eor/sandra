@@ -1,7 +1,7 @@
 
 
 from turtle import * 
-from random import randint, choice
+from random import randint, choice 
 
 ############# DEFINE CLASSES AND FUNCTIONS #############
 def road():
@@ -83,7 +83,7 @@ screen.register_shape("monster1.gif")
 screen.tracer(1)
 
 images = ["boo.gif", "randall.gif", "solivan.gif", "wazoski.gif", "monster1.gif"]
-
+lanes = [-250 ,-100 ,100,250] 
 #c = Car("one.gif",100,100)
 #d = Car("two.gif",100,100)
 cars =[]

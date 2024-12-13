@@ -83,8 +83,9 @@ screen.tracer(1)
 images = ["one.gif", "two.gif", "three.gif", "four.gif", "five.gif"]
 
 
-#c = Car("one.gif",100,100)
-#d = Car("two.gif",100,100)
+
+c = Car("one.gif",100,100)
+d = Car("two.gif",100,100)
 cars =[]
 for i in range (5):
     temp = Car (images[i], randint(-150,150),randint(300,300))
