@@ -19,7 +19,7 @@ class Shop:
         print(self.products[i], self.price[i])
 
       
-       # self.price
+      
        # for i in range (len(self.price)):
           #  print(self.products[i], self.price[i])
             
