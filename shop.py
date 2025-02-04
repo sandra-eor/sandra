@@ -15,9 +15,13 @@ class Shop:
 # HINT use a for loop
 
     def printItemsAndPrices (self):
-        self.price
-        for i in range (len(self.price)):
-            print(self.products[i], self.price[i])
+      for i in range (3):
+        print(self.products[i], self.price[i])
+
+      
+       # self.price
+       # for i in range (len(self.price)):
+          #  print(self.products[i], self.price[i])
             
 
 # add cost of item to the total
@@ -26,15 +30,27 @@ class Shop:
         idx = self.products.index(item)
         cost = self.price[idx]
         self.total += cost
-        print(input(self.total))
         
 
     def getTotal(self):
-        self.total += self.price
+        return self.total
+        
+        #self.total += self.price
+
         
 
 s = Shop()
 s.displayShopName()
 s.printItemsAndPrices()
-s.buy
+punch = input("What type of items are you looking for?")
 
+while punch !="None":
+    s.buy(punch)
+    s.displayShopName()
+    s.printItemsAndPrices()
+    punch = input("What type of items are you looking for?")
+
+
+
+print(s.getTotal())
+    
