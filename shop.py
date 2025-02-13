@@ -17,10 +17,8 @@ class Shop:
     def printItemsAndPrices (self):
       for i in range (3):
         print(self.products[i], self.price[i])
-
       
-      
-       # for i in range (len(self.price)):
+       # for  in range (len(self.price)):
           #  print(self.products[i], self.price[i])
             
 
