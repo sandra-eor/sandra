@@ -1,44 +1,37 @@
-"""names = ["Jaden","Maicol","Karen",Larissa"]
-def printsomething():
-    guess = input("Are you Jaden,Maicol,Karen,Larissa?Yes/No:")
-    while True:
-        
-       if guess == "Yes".lower():
-                yesguess = (input("Who you are?"))
-                if yesguess.lower in names:
-                        print("Welcome, a great party")
-                        break
-                else:
-                        print("Sorry you're not guess in this party")
-                        
-        
-
-   # elif age <= 19:
-   #     print("You are not elegible!.Wait a little longer")
-
-    #else:
-    #    print(printages)
-
-
-    """
-
-
-#def position(self):
-   # self.print("")
-
+#
 positions =["secretary","human resources","cleaning", "painter","computer installer"]
 certified="secretary","human resources","computer installer"
-n_certified ="cleaning", "painter"
+n_certified ="cleaning", "painter" 
 
-def position(certified,ncertified):
+def position(certified,n_certified):
     print("Hello dear friend! We have vacancies for these positions")
-    print(positions)
+    print(','.join(positions))
 
     while True:
-        puw = str(input("What position would you like to apply for?"))
-        if  puw == certified:
-            print("Necesitas tener certificado para estas posiciones ")
+        puw = str(input("What position would you like to apply for?")).strip().lower()
+        if  puw in certified:
+            print("You need to have a minimum high school certificate for this position.")
+            cer = str(input("Do you have certificate?Yes/No:")).strip() .lower()
+            if cer =="yes":
+                break
+            elif cer == "no":
+                print("Sorry, you need it.")
+            else:
+                print("Wrong answer!!.Try again")
+                print(position(certified,n_certified))
+
+        elif puw in n_certified:
+            exp = input("Do you have experience?Yes/No:").strip().lower()
+            if exp =="yes":
+                break
+            elif exp == "no":
+                print("Sorry, you need it.")
+            else:
+                print("Wrong answer!!.Try again")
+                print(position(certified,n_certified))
         
+        else:
+            print("Wrong answer!!Try again")
 
 ages = [20, 21, 22,23,24, 25]
 min = 20
@@ -58,12 +51,14 @@ def age_s(min ,max):
             break
         elif userage > max:
             print("Sorry, you are too old for this position.")
+            print(position(certified,n_certified))
         else:
             print("Sorry, you are not eligible for this position.")
+            print(position(certified,n_certified))
 
     print("Thank you for trying!")
 
-
+position(certified,n_certified)
 age_s(min,max)
 
 
