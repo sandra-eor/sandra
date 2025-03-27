@@ -62,5 +62,3 @@ def age_s(min ,max):# These parameters identify the maximum age and minimum age 
 #call the functions so that the codes can run
 position(certified,n_certified)
 age_s(min,max)
-
-
