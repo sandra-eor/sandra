@@ -1,5 +1,8 @@
 powers= ["flaying","invisibility","strength","through walls"]
+correct_power = "strength"
+incorrect_power = "flaying","invisibility","through walls"
 weapons = ["gun","axe","grenade","knives"]
+correct_weapons = "gun"
 
 #Beginning of the story
 def begin_story():
@@ -7,8 +10,14 @@ def begin_story():
           (Altosfre and Erfsotla). They had been rivals for more than two centuries
           . It was so long ago that they couldn't remember the original cause.""")
     print("You must investigate and find a solution to end these villages' conflicts.")
+    village()
     
 #Choose a village
 def village():
-    cav = str(input("Choose the village you would like to be in for this investigation.")).strip().lower()
+    cav = str(input("Choose the village you would like to be in for this investigation((Altosfre and Erfsotla).")).strip().lower()
+    if cav=="Altosfre":
+        print("Your decided Altosfre's village")
 
+    pass
+
+begin_story()
