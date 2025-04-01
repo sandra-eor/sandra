@@ -1,8 +1,12 @@
+v_a="altosfre"
+v_e="erfsotle"
 powers= ["flaying","invisibility","strength","through walls"]
-correct_power = "strength"
-incorrect_power = "flaying","invisibility","through walls"
+c_power = "strength"
+in_power = "flaying","invisibility","through walls"
 weapons = ["gun","axe","grenade","knives"]
-correct_weapons = "gun"
+c_weapons = "gun"
+in_weapons = "axe","grenade","knives"
+
 
 #Beginning of the story
 def begin_story():
@@ -13,11 +17,59 @@ def begin_story():
     village()
     
 #Choose a village
-def village():
-    cav = str(input("Choose the village you would like to be in for this investigation((Altosfre and Erfsotla).")).strip().lower()
-    if cav=="Altosfre":
-        print("Your decided Altosfre's village")
 
-    pass
+def village():
+    while True:
+    
+        cav = str(input("Choose the village you would like to be in for this investigation(Altosfre and Erfsotla).")).strip().lower()
+        if cav in v_a:
+         print("Your decided Altosfre's village")
+         print("Altosfre a village full of kind people among themselves but selfish"
+              " with the enemy village. The Trillon family was the only one that had "
+              "remained since the beginning of the war between Altosfre and Erfsotla,"
+               " they were the ones who had given the version of the war, but over" 
+              "he years the version changed.Investigate thoroughly. To get to the"
+              " Trillon home, you have to overcome some obstacles.")
+        
+         
+        
+        elif cav in v_e:
+            print("Your decided Erfsotla's village")
+            print("Erfsotla is a village full of kind people, but selfish"
+            " toward the enemy village. At the top of the mountain lived an old woman"
+            " who is over 200 years old. No one in the village believes she is capable"
+            " of such a thing.You must find out if it is "
+            "true and thus be able to get to the truth of everything.")
+
+        else:
+            print("That is not an available village. Try again.")
+            village()
+
+
+def r_weapons():
+    print("To continue advancing, you must choose a weapon that will help you advance and allow "
+    "you to defend yourself until you reach the truth, so choose wisely.")
+    correct_weapons()
+
+
+
+def correct_weapons(c_weapons,in_weapons):
+    cw = str(input("These are the options for your weapon.", weapons)).strip() .lower()
+    if cw in c_weapons:
+        print("Great choice! A gus is the best option to continue advancing and defend yourself from afar.")
+        
+    elif cw in in_weapons:
+        if cw == "axe":
+            print("")
+
+
+
+
+#def r_power(c_power,in_power):
+
+#def correct_power():
+
+#def incorrect_():
+
 
 begin_story()
