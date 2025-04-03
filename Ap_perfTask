@@ -1,8 +1,8 @@
 v_a="altosfre"
-v_e="erfsotle"
-powers= ["flaying","invisibility","strength","through walls"]
+v_e="erfsotla"
+powers= ["flying","invisibility","strength","through walls"]
 c_power = "strength"
-in_power = "flaying","invisibility","through walls"
+in_power = "flying","invisibility","through walls"
 weapons = ["gun","axe","grenade","knives"]
 c_weapons = "gun"
 in_weapons = "axe","grenade","knives"
@@ -30,6 +30,8 @@ def village():
                " they were the ones who had given the version of the war, but over" 
               "he years the version changed.Investigate thoroughly. To get to the"
               " Trillon home, you have to overcome some obstacles.")
+         r_weapons()
+       
         
          
         
@@ -40,6 +42,9 @@ def village():
             " who is over 200 years old. No one in the village believes she is capable"
             " of such a thing.You must find out if it is "
             "true and thus be able to get to the truth of everything.")
+            r_weapons()
+           
+
 
         else:
             print("That is not an available village. Try again.")
@@ -49,20 +54,43 @@ def village():
 def r_weapons():
     print("To continue advancing, you must choose a weapon that will help you advance and allow "
     "you to defend yourself until you reach the truth, so choose wisely.")
-    correct_weapons()
+    print("These are the options for your weapon.")
+    correct_weapons(c_weapons,in_weapons)
+    
 
 
 
 def correct_weapons(c_weapons,in_weapons):
-    cw = str(input("These are the options for your weapon.", weapons)).strip() .lower()
+    
+    for i in range (4):
+        print(weapons[i])
+
+    cw = str(input("Choose a weapon.")).strip() .lower()
+
     if cw in c_weapons:
         print("Great choice! A gus is the best option to continue advancing and defend yourself from afar.")
+        part2_story()
+        
         
     elif cw in in_weapons:
         if cw == "axe":
             print("")
 
+        elif cw == "grenade":
+            print("...")
 
+        elif cw == "knives":
+            print("....")
+
+        else:
+            print("That is not an available weapon. Try again.")
+
+    else:
+        print("That is not an available weapon. Try again.")
+#pass
+
+def part2_story():
+    print("")
 
 
 #def r_power(c_power,in_power):
@@ -73,3 +101,4 @@ def correct_weapons(c_weapons,in_weapons):
 
 
 begin_story()
+#correct_weapons()
