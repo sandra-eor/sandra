@@ -10,9 +10,9 @@ in_weapons = "axe","grenade","knives"
 
 #Beginning of the story
 def begin_story():
-    print("""Fifteen centuries ago, there was a conflict between two large villages
-          (Altosfre and Erfsotla). They had been rivals for more than two centuries
-          . It was so long ago that they couldn't remember the original cause.""")
+    print("Fifteen centuries ago, there was a conflict between two large villages"
+          " (Altosfre and Erfsotla). They had been rivals for more than two centuries"
+          ". It was so long ago that they couldn't remember the original cause.")
     print("You must investigate and find a solution to end these villages' conflicts.")
     village()
     
@@ -31,9 +31,8 @@ def village():
               "he years the version changed.Investigate thoroughly. To get to the"
               " Trillon home, you have to overcome some obstacles.")
          r_weapons()
-       
-        
-         
+         correct_weapons_al(c_weapons,in_weapons)
+
         
         elif cav in v_e:
             print("Your decided Erfsotla's village")
@@ -43,7 +42,7 @@ def village():
             " of such a thing.You must find out if it is "
             "true and thus be able to get to the truth of everything.")
             r_weapons()
-           
+            correct_weapons_er(c_weapons,in_weapons)
 
 
         else:
@@ -55,43 +54,89 @@ def r_weapons():
     print("To continue advancing, you must choose a weapon that will help you advance and allow "
     "you to defend yourself until you reach the truth, so choose wisely.")
     print("These are the options for your weapon.")
-    correct_weapons(c_weapons,in_weapons)
+   
     
 
 
 
-def correct_weapons(c_weapons,in_weapons):
+def correct_weapons_al(c_weapons,in_weapons):
     
     for i in range (4):
         print(weapons[i])
 
-    cw = str(input("Choose a weapon.")).strip() .lower()
+    cwal = str(input("Choose a weapon.")).strip() .lower()
 
-    if cw in c_weapons:
+    if cwal in c_weapons:
         print("Great choice! A gus is the best option to continue advancing and defend yourself from afar.")
-        part2_story()
+        #part2_story_al()
         
         
-    elif cw in in_weapons:
-        if cw == "axe":
-            print("")
+    elif cwal in in_weapons:
+        if cwal == "axe":
+            print("The axe would be too heavy to move around the swamp. Please choose another")
+            correct_weapons_er(c_weapons,in_weapons)
 
-        elif cw == "grenade":
-            print("...")
-
-        elif cw == "knives":
-            print("....")
+        if cwal == "axe":
+            print("The axe would be too heavy to move around the swamp. Please choose another")
+            correct_weapons_al(c_weapons,in_weapons)
+        elif cwal == "grenade":
+            print("I am not to handy with grenades it could explode in my hand. Please choose another ")
+            correct_weapons_al(c_weapons,in_weapons)
+        elif cwal == "knives":
+            print("I cant face a crocodile witha knive my hand will be of for sure. Plese choose another ")
+            correct_weapons_al(c_weapons,in_weapons)
 
         else:
             print("That is not an available weapon. Try again.")
 
     else:
         print("That is not an available weapon. Try again.")
-#pass
 
-def part2_story():
+
+def correct_weapons_er(c_weapons,in_weapons):
+   
+    for i in range (4):
+        print(weapons[i])
+
+    cwer = str(input("Choose a weapon.")).strip() .lower()
+
+    if cwer in c_weapons:
+        print("Great choice! A gus is the best option to continue advancing and defend yourself from afar.")
+        #tpart2_story_er()
+       
+       
+    elif cwer in in_weapons:
+        if cwer == "axe":
+            print("The axe is heavy, a blow to defend from eagles could make fall and die. Please choose another ")
+            correct_weapons_er(c_weapons,in_weapons)
+
+        elif cwer == "grenade":
+            print("A grenade is not very useful if it could fail and do nothing. Please choose another")
+            correct_weapons_er(c_weapons,in_weapons)
+
+        elif cwer == "knives":
+            print("Not very handy against eagles that fly against me. Please choose another ")
+            correct_weapons_er(c_weapons,in_weapons)
+
+        else:
+            print("That is not an available weapon. Try again.")
+            correct_weapons_er(c_weapons,in_weapons)
+
+    else:
+        print("That is not an available weapon. Try again.")
+        correct_weapons_er(c_weapons,in_weapons)
+
+
+
+def part2_story_al():
+    print("Great! You've moved on to the next level. To join the Trillion family," \
+    " you must cross a swamp filled with dangerous and deadly creatures. To do this, you must choose " \
+    "who will help you navigate the swamp and get there as quickly as possible.")
+    pass
+
+def part2_story_er():
     print("")
-
+    pass
 
 #def r_power(c_power,in_power):
 
