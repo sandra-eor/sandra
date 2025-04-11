@@ -17,7 +17,6 @@ def begin_story():
     village()
     
 #Choose a village
-
 def village():
     while True:
     
@@ -68,8 +67,8 @@ def correct_weapons_al(c_weapons,in_weapons):
 
     if cwal in c_weapons:
         print("Great choice! A gus is the best option to continue advancing and defend yourself from afar.")
-        #part2_story_al()
-        
+        r_power()
+        correct_power_al()
         
     elif cwal in in_weapons:
         if cwal == "axe":
@@ -102,7 +101,8 @@ def correct_weapons_er(c_weapons,in_weapons):
 
     if cwer in c_weapons:
         print("Great choice! A gus is the best option to continue advancing and defend yourself from afar.")
-        #tpart2_story_er()
+        r_power()
+        correct_power_er()
        
        
     elif cwer in in_weapons:
@@ -125,25 +125,67 @@ def correct_weapons_er(c_weapons,in_weapons):
     else:
         print("That is not an available weapon. Try again.")
         correct_weapons_er(c_weapons,in_weapons)
+        correct_power_er()
+
+def r_power():
+    print("Now you must choose one of these powers, think carefully.")
+    for i in range(4):
+        print(powers[i])
 
 
+#Correct power for Altosfre
+def correct_power_al():
+    cpal = str(input("Choose a power: ")).strip().lower()
+    if cpal == c_power:
+        print("Strength will help you navigate through the swamp.")
+        part2_story_al()
+    elif cpal in in_power:
+        if cpal == "flying":
+            print("Flying would be ideal, but you can't fly without wings.")
+            correct_power_al()
+        elif cpal == "invisibility":
+            print("Invisibility won't protect you from the swamp's dangers.")
+            correct_power_al()
+        elif cpal == "through walls":
+            print("You can't use 'through walls' in the swamp.")
+            correct_power_al()
+    else:
+        print("That is not an available power. Try again.")
+        correct_power_al()
+
+def correct_power_er():
+    cper = str(input("Choose a power: ")).strip().lower()
+    if cper == c_power:
+        print("Strength will help you climb the mountain.")
+        part2_story_er()
+    elif cper in in_power:
+        if cper == "flying":
+            print("Flying would be perfect for reaching the old woman.")
+            part2_story_er()
+        elif cper == "invisibility":
+            print("Invisibility won't help you in this scenario.")
+            correct_power_er()
+        elif cper == "through walls":
+            print("You can't use 'through walls' on the mountain.")
+            correct_power_er()
+    else:
+        print("That is not an available power. Try again.")
+        correct_power_er()
 
 def part2_story_al():
-    print("Great! You've moved on to the next level. To join the Trillion family," \
-    " you must cross a swamp filled with dangerous and deadly creatures. To do this, you must choose " \
-    "who will help you navigate the swamp and get there as quickly as possible.")
-    pass
+    print("Great! You've moved on to the next level. To join the Trillion family," 
+    " you must cross a swamp filled with dangerous and deadly creatures. " 
+    "To do so, you must choose the one that will help you cross the swamp and get there as quickly as possible." 
+    "You have successfully crossed the swamp and reached the Trillion home."
+    "Now, you can investigate the Trillon family's version of the war." \
+    "YOU WIN!!!")
 
+# Part 2 story for Erfsotla
 def part2_story_er():
-    print("")
-    pass
-
-#def r_power(c_power,in_power):
-
-#def correct_power():
-
-#def incorrect_():
+ print("You have decided to investigate the old woman on the mountain."
+        "With your chosen power, you manage to reach her."
+        "She shares with you a piece of history that could change everything." \
+        "YOU WIN!!!")
 
 
 begin_story()
-#correct_weapons()
