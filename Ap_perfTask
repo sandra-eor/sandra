@@ -48,7 +48,7 @@ def village():
             print("That is not an available village. Try again.")
             village()
 
-
+#choice of weapons
 def r_weapons():
     print("To continue advancing, you must choose a weapon that will help you advance and allow "
     "you to defend yourself until you reach the truth, so choose wisely.")
@@ -153,15 +153,17 @@ def correct_power_al():
         print("That is not an available power. Try again.")
         correct_power_al()
 
+#Correct power for Erfsotla
 def correct_power_er():
     cper = str(input("Choose a power: ")).strip().lower()
     if cper == c_power:
         print("Strength will help you climb the mountain.")
         part2_story_er()
+        
     elif cper in in_power:
         if cper == "flying":
             print("Flying would be perfect for reaching the old woman.")
-            part2_story_er()
+            correct_power_er()
         elif cper == "invisibility":
             print("Invisibility won't help you in this scenario.")
             correct_power_er()
@@ -172,13 +174,17 @@ def correct_power_er():
         print("That is not an available power. Try again.")
         correct_power_er()
 
+
+#Second part of the story of Altosfre
 def part2_story_al():
     print("Great! You've moved on to the next level. To join the Trillion family," 
     " you must cross a swamp filled with dangerous and deadly creatures. " 
     "To do so, you must choose the one that will help you cross the swamp and get there as quickly as possible." 
     "You have successfully crossed the swamp and reached the Trillion home."
-    "Now, you can investigate the Trillon family's version of the war." \
+    "Now, you can investigate the Trillon family's version of the war." 
     "YOU WIN!!!")
+    return begin_story()
+    
 
 # Part 2 story for Erfsotla
 def part2_story_er():
@@ -186,6 +192,8 @@ def part2_story_er():
         "With your chosen power, you manage to reach her."
         "She shares with you a piece of history that could change everything." \
         "YOU WIN!!!")
+ return begin_story()
+
 
 
 begin_story()
